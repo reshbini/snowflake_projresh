@@ -1,0 +1,32 @@
+manifest_version: 2
+type: DCM_PROJECT
+
+default_target: DCM_DEV
+
+targets:
+  DCM_DEV:
+    account_identifier: KBPQPLN-OW59269
+    project_name: CICD_DEMO_DEV.PROJECTS1.DCM_AUTOMATION
+    project_owner: ACCOUNTADMIN
+    templating_config: DEV
+
+  DCM_PROD:
+    account_identifier: KBPQPLN-OW59269
+    project_name: CICD_DEMO_PROD.PROJECTS1.DCM_AUTOMATION
+    project_owner: ACCOUNTADMIN
+    templating_config: PROD
+
+templating:
+  defaults:
+    project_owner_role: "ACCOUNTADMIN"
+    wh_size: "SMALL"
+
+  configurations:
+    DEV:
+      env_suffix: "_DEV"
+      database: "CICD_DEMO_DEV"
+
+    PROD:
+      env_suffix: "_PROD"
+      database: "CICD_DEMO_PROD"
+
